@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <style>
+
+.seguirCursor{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  height:60px;
+  width:60px;
+  border:2px solid black;
+  background-color: yellow;
+}
+    </style>
+</html>
+<body>
+
+    <div id="seguirCursor" class="seguirCursor">Aquí Esta el cursor</div>
+
+<script>
+
+let circle = document.getElementById('seguirCursor');
+const onMouseMove = (e) =>{
+  circle.style.left = e.pageX + 'px';
+  circle.style.top = e.pageY + 'px';
+}
+document.addEventListener('mousemove', onMouseMove);
+
+</script>
+</body>
+</html> 

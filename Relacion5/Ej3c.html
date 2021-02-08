@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <style>
+
+    </style>
+</html>
+<body>
+
+  <ol name="lista" id="lista">
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio eius minima nesciunt in neque enim fuga, quae iste quisquam, eveniet distinctio eum fugit nobis.</li>
+  </ol>
+
+  <label id="ltext">Texto</label></p>
+  <input type="text" id="texto"></p>
+  <label id="lpos">Pos</label></p>
+  <input type="number" id="pos" min="1" max="10">
+
+  <button id="busc" onclick="buscar(document.getElementById('texto').value, document.getElementById('pos').value)">Buscar</button>
+
+  <p id="demo"></p>
+<script>
+  function buscar(text,p){
+
+    var texto = text
+    var pos = p;
+
+    var elmnt = document.createElement("li");
+    elmnt.innerHTML = texto;
+
+    var item = document.getElementById("lista");
+    posb = item.children[pos-1];
+
+    document.getElementById("lista").insertBefore(elmnt,posb);
+    maxActual = document.getElementById("pos").getAttribute("max");
+    nmax = parseInt(maxActual);
+    document.getElementById("pos").setAttribute("max", nmax+1)
+
+    document.getElementById("texto").value = "";
+    document.getElementById("pos").value = "1";
+
+  }
+
+</script>
+</body>
+</html> 

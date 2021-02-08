@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<label>Cadena</label>
+<input type="text" id="texto"></p>
+<label>Subcadena a eliminar</label>
+<input type="text" id="subcadena">
+<p id="demo"></p>
+<button onclick="eliminarSubcadena(document.getElementById('texto').value,document.getElementById('subcadena').value)">Click me</button>
+
+<script>
+    
+    function eliminarSubcadena(texto,subcadena){
+        document.getElementById("demo").innerHTML = "";
+        array = texto.split(" ");
+
+        array.forEach(element => {
+            while(element.includes(subcadena)){
+                element = element.replace(subcadena,""); 
+            }
+            document.getElementById("demo").innerHTML += element + " ";
+        });
+
+
+    }
+
+
+</script>
+
+</body>
+</html> 

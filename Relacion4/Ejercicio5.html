@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<label>dia</label>
+<input type="text" id="dia"></p>
+<label>mes</label>
+<input type="text" id="mes"></p>
+<label>anio</label>
+<input type="text" id="anio"></p>
+
+<p id="demo"></p>
+
+<button onclick="compararFechas(document.getElementById('dia').value,document.getElementById('mes').value,document.getElementById('anio').value)">Click me</button>
+
+<script>
+
+
+    function compararFechas(dia,mes,anio){
+
+        fechaEjemplo = new Date(anio,mes,dia);
+        fechaActual = new Date();
+
+        fechaEjemplo = fechaEjemplo.getFullYear();
+        fechaActual = fechaActual.getFullYear();
+
+        if(fechaEjemplo > fechaActual){
+            aniosPasados = fechaEjemplo - fechaActual;
+        }
+        else{
+            aniosPasados = fechaActual - fechaEjemplo
+        }
+
+        document.getElementById("demo").innerHTML = "Años entre las dos fechas : " + aniosPasados;
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="vel">Velocidad 0</h1>  
+<script>
+var vel = 0;
+
+document.onkeydown = pulsarTecla;
+
+function pulsarTecla(e) {
+  e = e || window.event;
+
+  if(38 == e.keyCode){
+    vel++;
+  }
+  if(40 == e.keyCode){
+    if(vel > 0) vel--;
+  }
+
+  document.getElementById("vel").innerHTML = "Velocidad " + vel;
+}
+
+</script>
+</body>
+</html> 

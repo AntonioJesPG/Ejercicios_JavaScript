@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="ids"></p>
+<input type="text" id="title"></p>
+<input type="text" id="anyo"></p>
+<button onclick="crearPelicula(document.getElementById('ids').value,document.getElementById('title').value,document.getElementById('anyo').value)">Click me</button>
+<p id="demo"></p>
+<p id="generos"></p>
+<p id="id"></p>
+<p id="titulo"></p>
+<p id="anioEst"></p>
+<p id="paises"></p>
+<p id="genero"></p>
+
+
+<script>
+    
+    var generos = ["Action","Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary" ,"Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+
+    function crearPelicula(id,titulo,anioEst,paises,generos){
+        generos = generos.split('');
+        const pelicula = new Pelicula(id,titulo,anioEst,paises,generos);
+        pelicula.mostrarFichaTecnica();
+    }
+
+
+    class Pelicula{
+        constructor(id,titulo,anioEst,paises,generos){
+            try{
+                if(!/^[a-z]{2}[0-9]{7}$/.test(id)){
+                    throw new Error("El id ha de contener 2 letras y 7 números");
+                }
+                this.id = id;
+            }
+            catch(error){
+                console.log(error);
+            }
+            try{
+                if(titulo.length > 100){
+                    throw new Error("El título no puede superar los 100 caracteres");
+                }
+                this.titulo = titulo;
+            }
+            catch(error){
+                console.log(error);
+            }
+            try{
+                if(!/^[0-9]{4}$/.test(anioEst)){
+                    throw new Error("El año ha de tener 4 dígitos");
+                }
+                this.anioEst = anioEst;
+            }
+            catch(error){
+                console.log(error);
+            }
+            try{
+                if(!Array.isArray(paises)){
+                    throw new Error('El formato de los paises es ["pais","pais1","etc"]');
+                }
+                this.paises = paises;
+            }
+            catch(error){
+                console.log(error);
+            }
+
+            try{
+                
+                if(!/^[0-9]{4}$/.test(anioEst)){
+                    throw new Error("El año ha de tener 4 dígitos");
+                }
+                this.id = id;
+            }
+            catch(error){
+                console.log(error);
+            }
+            this.generos = generos;
+            document.getElementById("paises").innerHTML = "";
+        }
+
+        mostrarFichaTecnica(){
+            document.getElementById("id").innerHTML = this.id;
+            document.getElementById("titulo").innerHTML = this.titulo;
+            document.getElementById("anioEst").innerHTML = this.anioEst;
+
+            //paises.forEach(element => {
+                document.getElementById("paises").innerHTML += this.paises;
+            //});
+            document.getElementById("genero").innerHTML = this.genero;
+        }
+
+        static generosAceptados(){
+            generos.array.forEach(element => {
+                document.getElementById("generos").innerHTML += element + ", "
+            });
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html> 

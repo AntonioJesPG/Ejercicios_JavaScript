@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="texto"></p>
+<p id="demo"></p>
+<button onclick="parImpar(document.getElementById('texto').value)">Click me</button>
+
+<script>
+    
+    parImpar = (arr) => {
+
+    var miArray = JSON.parse(arr)
+    var pares = [];
+    var impares = [];
+    miArray.forEach(element => {
+        if(element%2 == 0){
+            pares.push(element);
+        }
+        else{
+            impares.push(element);
+        }
+    });
+
+    document.getElementById("demo").innerHTML = "[" + miArray + "] -> " + " Pares [ " + pares + " ] Impares [" + impares + "]";
+
+    return miArray;
+
+    }
+
+
+
+</script>
+
+</body>
+</html> 

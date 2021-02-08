@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<input type="text" id="texto">
+<p id="demo"></p>
+<button onclick="apariciones()">Click me</button>
+
+<script>
+    
+apariciones = () => {
+
+    var string = document.getElementById("texto").value;
+    //Separamos la frase en palabras
+    var arrays = string.split(" ");
+    //Array para guardar las palabras con sus apariciones
+    let counts = {};
+
+        for(let i =0; i < arrays.length; i++){ 
+            //Comprobamos si la palabra la hemos guardado en el array, si existe suamamos 1 al contador
+            if (counts[arrays[i]]){
+                counts[arrays[i]] += 1;
+            } 
+            //Si no existe la registramos
+            else {
+                counts[arrays[i]] = 1;
+     }
+        }
+
+        //Mostramos los elementos que aparecen mas de una vez y las veces que aparecen
+        for (let element in counts){
+        if (counts[element] >= 2){
+            console.log(element + " aparece : " + counts[element] + " veces.")
+        }
+    }
+
+}
+
+</script>
+
+</body>
+</html> 

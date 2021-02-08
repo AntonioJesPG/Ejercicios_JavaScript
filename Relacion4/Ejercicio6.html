@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="texto"></p>
+<p id="demo"></p>
+<button onclick="contadorLetras(document.getElementById('texto').value)">Click me</button>
+
+<script>
+    
+    function contadorLetras(src){
+        cadena = src;
+        cadena.trim();
+        cadena = cadena.split('');
+        console.log(cadena);
+        vocales = 0;
+        consonantes = 0;
+
+   
+            cadena.forEach(element => {
+                if(/[aeiou]/.test(element)){
+                    vocales++;
+                }
+                if(/[b-df-hj-np-tv-z]/.test(element)){
+                    consonantes++;
+                }
+            });
+
+            document.getElementById("demo").innerHTML = "La frase " + src + " contiene " + vocales + " vocales " + consonantes + " consonantes";
+    }
+
+
+</script>
+
+</body>
+</html> 

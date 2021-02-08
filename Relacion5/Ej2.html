@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+ <h1 id="parrafo">Texto con palabras a buscar</h1>  
+ <label>Palabra a buscar</label> 
+<input type="text" id="texto">
+<p id="demo"></p>
+<button onclick="buscar(document.getElementById('texto').value)">Buscar</button>
+
+<script>
+
+function buscar(text) {
+    var content = document.getElementById("parrafo").innerHTML;
+    var    pattern = new RegExp('^' + text + '$');
+    var frase = content.split(" ");
+    document.getElementById("parrafo").innerHTML = "";
+    frase.forEach(element => {
+        if(pattern.test(element) ){
+            element = '<mark>'+element+'</mark>';
+        }
+        document.getElementById("parrafo").innerHTML += element + " ";
+    });
+
+    
+}
+   
+
+</script>
+</body>
+</html> 

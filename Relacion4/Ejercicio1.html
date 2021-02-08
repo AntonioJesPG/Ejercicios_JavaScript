@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<input type="text" id="texto">
+<p id="demo"></p>
+<button onclick="revertir()">Click me</button>
+
+<script>
+
+function revertir(){
+    var palabra = document.getElementById("texto").value
+    var nuevaPalabra = "";
+    for(var i = palabra.length - 1; i >= 0; i--){
+        nuevaPalabra += palabra[i];
+    }
+
+    document.getElementById("demo").innerHTML = nuevaPalabra;
+}
+
+</script>
+
+</body>
+</html> 

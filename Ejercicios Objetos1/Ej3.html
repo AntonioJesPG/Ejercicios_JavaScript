@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label>Radio del circulo:</label>
+<input type="text" id="valorCirculo" name="valorCirculo">
+<button onclick="mostrarCirculo(document.getElementById('valorCirculo').value)">Calcular</button>
+
+<p id="radio"></p>
+<p id="Area"></p>
+<p id="Longitud"></p>
+
+<script>
+
+function mostrarCirculo (valor){
+    const circulo = new Circulo(valor);
+    circulo.getRadio();
+    circulo.calcularArea();
+    circulo.calcularLongitud();
+
+}
+
+class Circulo {
+
+
+    constructor(radio){
+        this.radio = radio;
+    }
+
+    getRadio(){
+        document.getElementById("radio").innerHTML = "Radio : " + this.radio;
+    }
+
+    calcularArea(){
+        this.area = this.radio * this.radio * Math.PI;
+        document.getElementById("Area").innerHTML = "Area : " + this.area;
+    }
+
+    calcularLongitud(){
+        this.longitud = 2*Math.PI*this.radio;
+        document.getElementById("Longitud").innerHTML = "Longitud : " + this.longitud;
+    }
+}
+
+</script>
+
+</body>
+</html> 

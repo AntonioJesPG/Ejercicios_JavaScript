@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<button onclick="fecha1.getFecha()">Click me</button>
+
+<script>
+
+var dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+var meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+
+Date.prototype.getFecha = function(){
+
+    var dia = String(this.getDate());
+    var diaSemana = dias[this.getDay()];
+
+    var mes = meses[this.getMonth()];
+    var mesNum = this.getMonth() + 1;
+
+    var anio = String(this.getFullYear());
+    var cuatrimestre = "";
+
+    if (meses.indexOf(mes) < 4){
+        cuatrimestre = "primer";
+    }
+    if (meses.indexOf(mes) >= 4 && meses.indexOf(mes) < 8){
+        cuatrimestre = "segundo";
+    }
+    if (meses.indexOf(mes) >= 8 ){
+        cuatrimestre = "tercer";
+    }
+
+    document.getElementById("demo").innerHTML = "Estamos en el día " + dia + "(" + diaSemana + ") del mes " + mesNum + "(" + mes + ") del " +  cuatrimestre + " cuatrimestre del año " + anio;
+}
+   
+var fecha1 = new Date();
+
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="texto"></p>
+<p id="demo"></p>
+<button onclick="ascDesc(document.getElementById('texto').value)">Click me</button>
+
+<script>
+    
+    ascDesc = (arr) => {
+
+    var miArray = JSON.parse(arr);
+    miArray.sort();
+    var asc = [];
+    var desc = [];
+    miArray.forEach(element => {
+            asc.push(element);
+            desc.unshift(element);
+    });
+
+    document.getElementById("demo").innerHTML = "[" + miArray + "] -> " + " Ascendente [ " + asc + " ] Descendente [" + desc + "]";
+
+    return miArray;
+
+    }
+
+
+
+</script>
+
+</body>
+</html> 

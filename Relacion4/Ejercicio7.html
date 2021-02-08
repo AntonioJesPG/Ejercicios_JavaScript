@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="texto"></p>
+<p id="demo"></p>
+<button onclick="mayorMenor(document.getElementById('texto').value)">Click me</button>
+
+<script>
+    
+    mayorMenor = (arr) => {
+
+    var miArray = JSON.parse(arr)
+    menor = Number.MAX_SAFE_INTEGER;
+    mayor = Number.MIN_SAFE_INTEGER;
+    miArray.forEach(element => {
+        if(element > mayor){
+            mayor = element;
+        }
+        if(element < menor){
+            menor = element;
+        }
+    });
+
+    miArray = [mayor,menor];
+
+    document.getElementById("demo").innerHTML = "El array " + arr + " tiene el mayor y menor [" + miArray + "]";
+
+    return miArray;
+
+    }
+
+
+
+</script>
+
+</body>
+</html> 

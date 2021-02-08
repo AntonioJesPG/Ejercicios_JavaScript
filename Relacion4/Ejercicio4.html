@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="texto"></p>
+<p id="demo"></p>
+<button onclick="comprobarCapicua(document.getElementById('texto').value)">Click me</button>
+
+<script>
+    
+    function comprobarCapicua(num){
+
+        mun = num.split('').reverse().join('');
+        console.log(num);
+        console.log(mun);
+
+        if(mun === num){
+            document.getElementById("demo").innerHTML = "El número " + num + " es capicua";
+        }
+        else{
+            document.getElementById("demo").innerHTML = "El número " + num + " no es capicua";
+        }
+
+
+    }
+
+
+</script>
+
+</body>
+</html> 
